@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Wisdom School</title>
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background: #f4f6f9;
+}
+
+/* HEADER */
+header {
+    background: #003049;
+    color: white;
+    padding: 15px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header h1 {
+    font-size: 24px;
+}
+
+nav a {
+    color: white;
+    margin-left: 20px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+nav a:hover {
+    color: #fcbf49;
+}
+
+/* HERO */
+.hero {
+    height: 85vh;
+    background: url("https://images.unsplash.com/photo-1580582932707-520aed937b7b") no-repeat center/cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: white;
+}
+
+.hero h2 {
+    font-size: 45px;
+}
+
+.hero p {
+    margin: 10px 0;
+    font-size: 20px;
+}
+
+.hero button {
+    padding: 12px 25px;
+    background: #fcbf49;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+/* SECTION */
+.container {
+    padding: 50px;
+}
+
+.section-title {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+/* CARDS */
+.cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px,1fr));
+    gap: 20px;
+}
+
+.card {
+    background: white;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.card img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+}
+
+.card h3 {
+    padding: 10px;
+}
+
+.card p {
+    padding: 0 10px 20px;
+    color: #555;
+}
+
+/* CONTACT */
+.contact {
+    text-align: center;
+}
+
+.contact input, .contact textarea {
+    width: 80%;
+    padding: 10px;
+    margin: 10px;
+}
+
+.contact button {
+    padding: 10px 20px;
+    background: #003049;
+    color: white;
+    border: none;
+}
+
+/* FOOTER */
+footer {
+    background: #003049;
+    color: white;
+    text-align: center;
+    padding: 15px;
+}
+</style>
+
+</head>
+
+<body>
+
+<header>
+    <h1>Wisdom School</h1>
+    <nav>
+        <a href="#">Home</a>
+        <a href="#">About</a>
+        <a href="#">Courses</a>
+        <a href="#">Teachers</a>
+        <a href="#">Contact</a>
+    </nav>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+    <div>
+        <h2>Welcome to Wisdom School</h2>
+        <p>Building Bright Futures Through Education</p>
+        <button onclick="welcome()">Join Us</button>
+    </div>
+</section>
+
+<!-- ABOUT -->
+<div class="container">
+    <h2 class="section-title">About Our School</h2>
+    <div class="cards">
+        <div class="card">
+            <img src="https://images.unsplash.com/photo-1509062522246-3755977927d7">
+            <h3>Our Mission</h3>
+            <p>To provide quality education and build strong character.</p>
+        </div>
+
+        <div class="card">
+            <img src="https://images.unsplash.com/photo-1523240795612-9a054b0db644">
+            <h3>Our Vision</h3>
+            <p>To become a leading school in academic excellence.</p>
+        </div>
+
+        <div class="card">
+            <img src="https://images.unsplash.com/photo-1503676260728-1c00da094a0b">
+            <h3>Our Values</h3>
+            <p>Discipline, Respect, Hard Work, and Integrity.</p>
+        </div>
+    </div>
+</div>
+
+<!-- COURSES -->
+<div class="container">
+    <h2 class="section-title">Our Courses</h2>
+    <div class="cards">
+        <div class="card">
+            <img src="https://images.unsplash.com/photo-1584697964190-7383c3e46c44">
+            <h3>Science</h3>
+            <p>Physics, Chemistry, Biology</p>
+        </div>
+
+        <div class="card">
+            <img src="https://images.unsplash.com/photo-1588072432836-e10032774350">
+            <h3>Technology</h3>
+            <p>Computer Studies & Programming</p>
+        </div>
+
+        <div class="card">
+            <img src="https://images.unsplash.com/photo-1511629091441-ee46146481b6">
+            <h3>Business</h3>
+            <p>Entrepreneurship & Accounting</p>
+        </div>
+    </div>
+</div>
+
+<!-- TEACHERS -->
+<div class="container">
+    <h2 class="section-title">Our Teachers</h2>
+    <div class="cards">
+        <div class="card">
+            <img src="https://images.unsplash.com/photo-1607746882042-944635dfe10e">
+            <h3>Mr. John</h3>
+            <p>Science Teacher</p>
+        </div>
+
+        <div class="card">
+            <img src="https://images.unsplash.com/photo-1603415526960-f7e0328d3d8f">
+            <h3>Ms. Alice</h3>
+            <p>ICT Teacher</p>
+        </div>
+
+        <div class="card">
+            <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2">
+            <h3>Mr. David</h3>
+            <p>Business Teacher</p>
+        </div>
+    </div>
+</div>
+
+<!-- CONTACT -->
+<div class="container contact">
+    <h2 class="section-title">Contact Us</h2>
+    <input type="text" placeholder="Your Name"><br>
+    <input type="email" placeholder="Your Email"><br>
+    <textarea placeholder="Your Message"></textarea><br>
+    <button onclick="sendMessage()">Send Message</button>
+</div>
+
+<footer>
+    <p>© 2026 Wisdom School | All Rights Reserved</p>
+</footer>
+
+<script>
+function welcome() {
+    alert("Welcome to Wisdom School! Your future starts here.");
+}
+
+function sendMessage() {
+    alert("Message sent successfully!");
+}
+</script>
+
+</body>
+</html>

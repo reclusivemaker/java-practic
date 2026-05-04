@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dream Homes</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family: Arial;
+}
+
+body{
+    background:#f4f4f4;
+}
+
+
+nav{
+    background:#222;
+    padding:15px;
+    text-align:center;
+}
+
+nav a{
+    color:white;
+    margin:10px;
+    text-decoration:none;
+    font-weight:bold;
+}
+
+nav a:hover{
+    color:orange;
+}
+
+.home{
+    position:relative;
+    height:100vh;
+    color:white;
+}
+
+.home video{
+    position:absolute;
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    z-index:-1;
+}
+
+.home-content{
+    text-align:center;
+    padding-top:200px;
+}
+
+.home h1{
+    font-size:50px;
+}
+
+.btn{
+    padding:10px 20px;
+    background:orange;
+    border:none;
+    cursor:pointer;
+    margin-top:20px;
+}
+
+
+section{
+    padding:50px;
+    text-align:center;
+}
+
+.house-container{
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:center;
+    gap:20px;
+}
+
+.house{
+    background:white;
+    width:250px;
+    padding:10px;
+    box-shadow:0 0 10px gray;
+}
+
+.house img{
+    width:100%;
+    height:150px;
+}
+
+
+footer{
+    background:#222;
+    color:white;
+    text-align:center;
+    padding:20px;
+}
+
+
+#search{
+    padding:10px;
+    width:50%;
+    margin-bottom:20px;
+}
+</style>
+
+</head>
+<body>
+
+
+<nav>
+    <a href="#home">Home</a>
+    <a href="#about">About Us</a>
+    <a href="#rent">Rent</a>
+    <a href="#sale">Sale</a>
+</nav>
+
+
+<div class="home" id="home">
+    <video autoplay muted loop>
+        <source src="https://www.w3schools.com/howto/rain.mp4" type="video/mp4">
+    </video>
+
+    <div class="home-content">
+        <h1>Find Your Dream House</h1>
+        <p>Best houses for rent and sale</p>
+        <button class="btn" onclick="welcome()">Get Started</button>
+    </div>
+</div>
+
+
+<section id="about">
+    <h2>About Us</h2>
+    <p>We help you find the best houses in your city. Rent or buy easily with us.</p>
+</section>
+
+
+<section id="rent">
+    <h2>Houses for Rent</h2>
+
+    <input type="text" id="search" placeholder="Search house..." onkeyup="searchHouse()">
+
+    <div class="house-container" id="rentList">
+
+        <div class="house">
+            <img src="https://images.unsplash.com/photo-1568605114967-8130f3a36994">
+            <h3>Modern House</h3>
+            <p>$300/month</p>
+        </div>
+
+        <div class="house">
+            <img src="https://images.unsplash.com/photo-1570129477492-45c003edd2be">
+            <h3>Family Home</h3>
+            <p>$250/month</p>
+        </div>
+
+        <div class="house">
+            <img src="https://images.unsplash.com/photo-1580587771525-78b9dba3b914">
+            <h3>Luxury Villa</h3>
+            <p>$500/month</p>
+        </div>
+
+    </div>
+</section>
+
+
+<section id="sale">
+    <h2>Houses for Sale</h2>
+
+    <div class="house-container">
+
+        <div class="house">
+            <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c">
+            <h3>Big Villa</h3>
+            <p>$50,000</p>
+            <button onclick="buy()">Buy</button>
+        </div>
+
+        <div class="house">
+            <img src="https://images.unsplash.com/photo-1605276374104-dee2a0ed3cd6">
+            <h3>City House</h3>
+            <p>$35,000</p>
+            <button onclick="buy()">Buy</button>
+        </div>
+
+        <div class="house">
+            <img src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750">
+            <h3>Classic Home</h3>
+            <p>$40,000</p>
+            <button onclick="buy()">Buy</button>
+        </div>
+
+    </div>
+</section>
+
+
+<footer>
+    <h3>Contact Us</h3>
+    <p>Email: dreamhomes@gmail.com</p>
+    <p>Phone: +250 700 000 000</p>
+</footer>
+
+<script>
+
+
+function welcome(){
+    alert("Welcome to Dream Homes!");
+}
+
+
+function buy(){
+    alert("House added! We will contact you.");
+}
+
+
+function searchHouse(){
+    let input = document.getElementById("search").value.toLowerCase();
+    let houses = document.getElementsByClassName("house");
+
+    for(let i=0;i<houses.length;i++){
+        let text = houses[i].innerText.toLowerCase();
+        if(text.includes(input)){
+            houses[i].style.display="block";
+        }else{
+            houses[i].style.display="none";
+        }
+    }
+}
+
+
+window.addEventListener("scroll", function(){
+    document.querySelector("nav").style.background =
+        window.scrollY > 50 ? "black" : "#222";
+});
+
+</script>
+
+</body>
+</html>
